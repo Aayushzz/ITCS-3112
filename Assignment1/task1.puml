@@ -1,0 +1,8 @@
+@startuml
+class Task1 {
+    + main(args: String[]): void
+    - length: double
+    - width: double
+    - area: double
+}
+@enduml

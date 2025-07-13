@@ -1,0 +1,10 @@
+@startuml
+class Task2 {
+    +main(args: String[]): void
+    -- local variables --
+    - scanner: Scanner
+    - num1: int
+    - num2: int
+    - result: int
+}
+@enduml
