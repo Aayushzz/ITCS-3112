@@ -1,0 +1,16 @@
+@startuml
+title File Reading Program UML
+
+class Main {
+    + main(String[] args)
+}
+
+Main : String filePath
+Main : int lineCount
+Main : int wordCount
+Main : int charCount
+
+
+
+
+@enduml

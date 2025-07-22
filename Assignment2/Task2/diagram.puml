@@ -1,0 +1,35 @@
+@startuml
+class University {
+    - String name
+    - List<Department> departments
+    + University(String name)
+    + addDepartment(Department department)
+    + displayDetails()
+}
+
+class Department {
+    - String name
+    - List<Course> courses
+    - List<Instructor> instructors
+    + Department(String name)
+    + addCourse(Course course)
+    + addInstructor(Instructor instructor)
+    + displayDetails()
+}
+
+class Course {
+    - String name
+    + Course(String name)
+    + displayDetails()
+}
+
+class Instructor {
+    - String name
+    + Instructor(String name)
+    + displayDetails()
+}
+
+University "1" *-- "0..*" Department
+Department "1" *-- "0..*" Course
+Department "1" *-- "0..*" Instructor
+@enduml

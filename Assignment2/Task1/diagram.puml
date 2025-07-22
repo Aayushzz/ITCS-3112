@@ -1,0 +1,23 @@
+@startuml
+class Vehicle {
+    - String brand
+    - int year
+    + Vehicle(String brand, int year)
+    + displayDetails()
+}
+
+class Car {
+    - String fuelType
+    + Car(String brand, int year, String fuelType)
+    + displayDetails()
+}
+
+class ElectricCar {
+    - int batteryCapacity
+    + ElectricCar(String brand, int year, int batteryCapacity)
+    + displayDetails()
+}
+
+Vehicle <|-- Car
+Vehicle <|-- ElectricCar
+@enduml
