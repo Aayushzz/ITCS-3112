@@ -1,0 +1,35 @@
+@startuml
+
+package "Assgn3.Task2" {
+
+    abstract class Shape {
+        # int sides
+        + Shape(int)
+        + abstract double calculateArea()
+    }
+
+    class Rectangle {
+        - double width
+        - double height
+        + Rectangle(double, double)
+        + double calculateArea()
+    }
+
+    class Triangle {
+        - double base
+        - double height
+        + Triangle(double, double)
+        + double calculateArea()
+    }
+
+    class Main {
+        + void main(String[])
+    }
+
+    Shape <|-- Rectangle
+    Shape <|-- Triangle
+    Main --> Rectangle
+    Main --> Triangle
+}
+
+@enduml

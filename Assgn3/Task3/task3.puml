@@ -1,0 +1,33 @@
+@startuml
+
+package "Assgn3.Task3" {
+
+    class LibraryItem {
+        # String title
+        # String author
+        + LibraryItem(String, String)
+        + void displayInfo()
+    }
+
+    class Book {
+        + Book(String, String)
+        + void displayInfo()
+    }
+
+    class Magazine {
+        - String publisher
+        + Magazine(String, String)
+        + void displayInfo()
+    }
+
+    class Main {
+        + void main(String[])
+    }
+
+    LibraryItem <|-- Book
+    LibraryItem <|-- Magazine
+    Main --> Book
+    Main --> Magazine
+}
+
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+
+package "Assgn3.Task1" {
+    
+    class BankAccount {
+        - int accountNumber
+        # double balance
+        + BankAccount(int, double)
+        + void deposit(double)
+        + void withdraw(double)
+        + int getaccountNumber()
+        + double getBalance()
+        + void displayBalance()
+    }
+
+    class CheckingAccount {
+        + CheckingAccount(int, double)
+        + void withdraw(double)
+    }
+
+    class SavingsAccount {
+        + SavingsAccount(int, double)
+        + void withdraw(double)
+    }
+
+    class Main {
+        + void main(String[])
+    }
+
+    BankAccount <|-- CheckingAccount
+    BankAccount <|-- SavingsAccount
+    Main --> CheckingAccount
+    Main --> SavingsAccount
+}
+
+@enduml
