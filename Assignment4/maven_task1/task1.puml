@@ -1,0 +1,40 @@
+@startuml
+
+package "com.example.library" {
+
+    class Book {
+        - String title
+        - String author
+        --
+        + Book(String title, String author)
+        + String getTitle()
+        + void setTitle(String title)
+        + String getAuthor()
+        + void setAuthor(String author)
+    }
+
+    class LibraryManager {
+        - List<Book> books
+        --
+        + LibraryManager()
+        + void addBook(Book book)
+        + List<Book> searchByTitle(String title)
+        + boolean updateBookDetails(String title, String newTitle, String newAuthor)
+    }
+
+    class LibraryManagerTest {
+        - LibraryManager libraryManager
+        --
+        + void setUp()
+        + void testAddBook()
+        + void testSearchByTitle()
+        + void testUpdateBookDetails()
+        + void testUpdateBookDetailsNonExistingBook()
+    }
+
+    ' Relationships
+    LibraryManager "1" --> "*" Book : manages
+    LibraryManagerTest "1" --> "1" LibraryManager : tests
+}
+
+@enduml
