@@ -19,7 +19,7 @@ public abstract class Employee {
         return name;
     }
 
-    public String getDeparment(){
+    public String getDepartment(){
         return department;
     }
 
